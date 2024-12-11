@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neil || Portfolio website</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- boxicon css link -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style> @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        list-style: none;
+        scroll-behavior: smooth;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #e3edf7;
+        overflow-x: hidden;
+    }
+    
+    header {
+        padding: 15px 8%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(0deg, #fff 0%, #edf4fa 51%, #e5eef7 100%);
+        z-index: 100;
+        transition: .3s;
+    }
+    
+    header .logo {
+        font-size: 1.7rem;
+        font-weight: 700;
+    }
+    
+    span {
+        background: linear-gradient(180deg, rgba(247, 1, 120, 1)0%,
+                rgba(160, 8, 156, 1)51%,
+                rgba(99, 13, 178, 1)100%);
+        color: transparent;
+        -webkit-background-clip: text;
+    }
+    
+    ul.navlist {
+        display: flex;
+    }
+    
+    .navlist li {
+        margin: 0 1rem;
+    }
+    
+    .navlist li a {
+        display: inline-flex;
+        font-weight: 600;
+    }
+    
+    .navlist li a:hover,
+    .navlist li a.active {
+        background: linear-gradient(180deg, rgba(247, 1, 120, 1)0%,
+                rgba(160, 8, 156, 1)51%,
+                rgba(99, 13, 178, 1)100%);
+        color: transparent;
+        -webkit-background-clip: text;
+    }
+    
+    .right-header {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        grid-gap: .8rem;
+    }
+    
+    .btn {
+        background: linear-gradient(180deg, rgba(247, 1, 120, 1)0%,
+                rgba(160, 8, 156, 1)51%,
+                rgba(99, 13, 178, 1)100%);
+        color: #fff;
+        padding: 8px 10px;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: all .3s ease;
+    }
+    
+    .btn:hover,
+    .btn-box .d-CV:hover {
+        box-shadow: rgba(0, 0, 0, 0.19)0px 10px 20px,
+            rgba(0, 0, 0, 0.23)0px 6px 6px;
+    }
+    
+    .menu-icon {
+        position: relative;
+        display: block;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    
+    .menu-icon .bar,
+    .menu-icon::after,
+    .menu-icon::before {
+        content: "";
+        display: none;
+        width: 100%;
+        height: 4px;
+        border-radius: 3px;
+        background: #000;
+        margin: 6px 0;
+        transition: .4s;
+    }
+    
+    .menu-icon.active::before {
+        transform: rotate(-45deg) translate(-6px, 6px);
+    }
+    
+    .menu-icon.active::after {
+        transform: rotate(45deg)translate(-8px, -8px);
+    }
+    
+    .menu-icon.active .bar {
+        opacity: 0;
+    }
+    
+    
+    /* ==== home ==== */
+    section {
+        padding: 90px 8%;
+    }
+    
+    .home {
+        min-height: 100vh;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        grid-gap: 4em;
+        background: linear-gradient(98deg, #e5eef7 0%, #fff 100%);
+    }
+    
+    .hero-info {
+        margin-top: 3rem;
+    }
+    
+    .hero-info h3 {
+        color: #90979f;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+    }
+    
+    .hero-info h1 {
+        font-size: 3.5rem;
+    }
+    
+    .text-animate {
+        width: 22.8rem;
+        position: relative;
+    }
+    
+    .text-animate h2::before { 
+        content: ""; 
+        position: absolute; 
+        top: 7px; 
+        left: -3px; 
+        width: 0; 
+        height: 70%; 
+        border-right: 2px solid #e6006d; 
+        animation: moveCursorText 3s linear infinite; 
+        animation-delay: 2s; }
+    
+    
+    
+    
+    .hero-info p {
+        font-size: .9rem;
+        color: #90979f;
+        line-height: 1.5rem;
+    }
+    
+    button {
+     padding: 1.3em 3em;
+     font-size: 12px;
+     text-transform: uppercase;
+     letter-spacing: 2.5px;
+     font-weight: 500;
+     color: #000;
+     background-color: #cc0f0f;
+     border: none;
+     border-radius: 45px;
+     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+     transition: all 0.3s ease 0s;
+     cursor: pointer;
+     outline: none;
+     margin-top: 10px;
+}
+
+button:hover {
+  background-color: #5e10a7;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+    
+    .social-media {
+        display: flex;
+        justify-content: space-between;
+        width: 220px;
+        height: 45px;
+    }
+    
+    .social-media a {
+        width: 42px;
+        height: 42px;
+        font-size: 1.5rem;
+        color: #e6006d;
+        background: #fff;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        transition: .4s;
+        border-radius: 50%;
+        z-index: 1;
+    }
+    
+    .social-media a:hover {
+        background: linear-gradient(180deg, rgba(247, 1, 120, 1)0%,
+                rgba(160, 8, 156, 1)51%,
+                rgba(99, 13, 178, 1)100%);
+        color: #fff;
+    }
+    
+    .bg-icon {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .bg-icon span {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(180deg, rgba(247, 1, 120, 1)0%,
+                rgba(160, 8, 156, 1)51%,
+                rgba(99, 13, 178, 1)100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: -1;
+        top: -25px;
+        left: -25px;
+    }
+    
+    .bg-icon span:nth-child(2) {
+        top: -40px;
+        left: 55px;
+    }
+    
+    .bg-icon span:nth-child(3) {
+        top: 45px;
+        left: 65px;
+    }
+    
+    .bg-icon span:nth-child(4) {
+        top: 60px;
+        left: 20px;
+    }
+    
+    .bg-icon span:nth-child(5) {
+        top: 30px;
+        left: -20px;
+    }
+    
+    .bg-icon span:nth-child(6) {
+        top: 70px;
+        left: -20px;
+    }
+    
+    .bg-icon span:nth-child(7) {
+        top: 20px;
+        left: 80px;
+    }
+    
+    .bg-icon span:nth-child(8) {
+        top: -25px;
+        left: 100px;
+    }
+    
+    .bg-icon span:nth-child(9) {
+        top: 80px;
+        left: 100px;
+    }
+    
+    .bg-icon span:nth-child(10) {
+        top: 10px;
+        left: 120px;
+    }
+    
+    @keyframes moveText {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 100% 0;
+        }
+    }
+    
+    @keyframes moveCursorText {
+        0% {
+            left: -3px;
+            width: 0;
+        }
+        50% {
+            left: -3px;
+            width: 0;
+        }
+        100% {
+            width: 50%;
+            left: 100%;
+        }
+    }
+
+    /* ==== About section ==== */
+    .about {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+    }
+    
+    .about-info {
+        max-width: 800px;
+        text-align: center;
+    }
+    
+    .about-info h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+    }
+    
+    .about-info p {
+        font-size: 1rem;
+        color: #777;
+        line-height: 1.8rem;
+        margin-top: 20px;
+    }
+
+    /* ==== Services section ==== */
+    .services {
+        background: #f9f9f9;
+        padding: 60px 8%;
+    }
+    
+    .services h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        color: #333;
+    }
+    
+    .service-list {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+    
+    .service-item {
+        background: #fff;
+        padding: 20px;
+        width: 30%;
+        text-align: center;
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+    
+    .service-item h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #e6006d;
+    }
+    
+    .service-item p {
+        color: #777;
+    }
+    
+    /* ==== Portfolio section ==== */
+    .portfolio {
+        padding: 60px 8%;
+        background: #fff;
+    }
+    
+    .portfolio h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        color: #333;
+    }
+    
+    .portfolio-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 40px;
+    }
+    
+    .portfolio-item {
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .portfolio-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    /* ==== Blog section ==== */
+    .blog {
+        padding: 60px 8%;
+        background: #f9f9f9;
+    }
+    
+    .blog h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        color: #333;
+    }
+    
+    .blog-posts {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+    
+    .blog-post {
+        background: #fff;
+        padding: 20px;
+        width: 30%;
+        text-align: center;
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+    
+    .blog-post h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #e6006d;
+    }
+    
+    .blog-post p {
+        color: #777;
+    }
+
+    .contact {
+        padding: 60px 8%;
+        background: #fff;
+    }
+    
+    .contact h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        color: #333;
+    }
+    
+    .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: grid;
+        gap: 15px;
+        margin-top: 40px;
+    }
+    
+    .contact-form input, .contact-form textarea {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+    
+    .contact-form button {
+        background: linear-gradient(180deg, rgba(247, 1, 120, 1)0%,
+                rgba(160, 8, 156, 1)51%,
+                rgba(99, 13, 178, 1)100%);
+        color: #fff;
+        padding: 12px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    .contact-form button:hover {
+        background: linear-gradient(180deg, rgba(160, 8, 156, 1)0%,
+                rgba(247, 1, 120, 1)51%,
+                rgba(99, 13, 178, 1)100%);
+    }
+</style>
+<body>
+    <header>
+        <div class="logo">NEIL <span>Portfolio</span></div>
+        <ul class="navlist">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="right-header">
+            <button class="btn">Get in Touch</button>
+        </div>
+    </header>
+
+    <section id="home" class="home">
+        <div class="hero-info">
+            <h3>Hi, I'm</h3>
+            <h1>Neil</h1>
+            <div class="text-animate">
+            </div>
+            <p>I'm a 2nd year college student at STI College, Sta Maria.</p>
+            <div class="btn-box">
+                <li><button> <a href="#portfolio">Projects</a></button></li>
+                </button>
+            </div>
+        </div>
+        <div class="hero-image">
+            
+            <img 
+    src="https://scontent.fcrk1-3.fna.fbcdn.net/v/t39.30808-6/459241948_1971387500047701_6620216189690865886_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeFapMF-m7FixibzTNiO2Te2HyA5hlgA110fIDmGWADXXQRuHdwaRJi0xkxTNZMPuVWx8lyr7faZnY6t7LQqF8Hm&_nc_ohc=Xwyrl11s32oQ7kNvgGGQo6m&_nc_zt=23&_nc_ht=scontent.fcrk1-3.fna&_nc_gid=A9d3Dy1YVezqvVHzo4t_xhD&oh=00_AYByPOCW98GHWeeCgOqc-TiH9YWLiMXtAf8k1aAdB-gzTQ&oe=675C6A82" 
+    alt="Neil's photo" 
+    width="500" 
+    height="500" 
+    style="border-radius: 50%; vertical-align: middle; margin: 50px 700px;">
+        </div>
+    </section>
+    
+
+    <section id="about" class="about">
+        <div class="about-info">
+            <h2>About Me</h2>
+            <p>I am a passionate 2nd year College student at STI College STA MARIA. My focus is learning codes, and I am always eager to learn new technologies to improve my skills.</p>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Skills</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>UI Desingner</h3>
+                <p>Makes the website more catchy and beautiful.</p>
+            </div>
+            <div class="service-item">
+                <h3>Java</h3>
+                <p>An object-oriented programming language that is designed to be platform-independent through the use of the Java Virtual Machine (JVM) best describes the Java programming language.</p>
+            </div>
+            <div class="service-item">
+                <h3>Python</h3>
+                <p>Commonly used for developing websites and software, task automation, data analysis, and data visualization. Since it's relatively easy to learn, Python has been adopted by many non-programmers such as accountants and scientists, for a variety of everyday tasks, like organizing finances.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>Projects</h2>
+        <div class="portfolio-gallery">
+            <div class="portfolio-item">
+                <img src="https://scontent.fcrk1-5.fna.fbcdn.net/v/t1.15752-9/466792447_2066260613826883_3545834620613970116_n.png?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeHsOmUx5FJ2eAcfc-TVwHECJM4sTLUZK0gkzixMtRkrSBVB28FsEn9I1zjqDH9dO9zR6PJQdnLz32miStEQyHY4&_nc_ohc=F141Uk7cFBwQ7kNvgFNLfcx&_nc_zt=23&_nc_ht=scontent.fcrk1-5.fna&oh=03_Q7cD1QGEQ5rT2qBbMo2XEI6kC5WSM5yAIxGzpkbiso7wzZpQJQ&oe=677E2DF6" alt="Portfolio item 1" >
+                <p>Project Portfolio</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://scontent.fcrk1-1.fna.fbcdn.net/v/t1.15752-9/466550244_929875052449561_8339385836434491700_n.png?_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFif_d7ZtPAi0zuX0gz3bZgbuWaP4_P-Rtu5Zo_j8_5G25GE6cJJYps5XmobCW1u-qONOX3KRA8FgYwlgAWKBLF&_nc_ohc=8RRP4fO368EQ7kNvgE4t9qm&_nc_zt=23&_nc_ht=scontent.fcrk1-1.fna&oh=03_Q7cD1QEPAKQIeNxRr_7N2FMKW3dzLiH7YywFkeu-EFjDMVfmHw&oe=677E24A9" alt="Portfolio item 2">
+                <p>Project ForLoop</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://scontent.fcrk1-1.fna.fbcdn.net/v/t1.15752-9/462652606_601485529227990_3290756281745781667_n.png?_nc_cat=108&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeExtjbjWoKuBLNwxrMRjrsl_Hf56UckYpD8d_npRyRikDPkuicPh_xLHJLNn9dGuAqYWd_hs_k9ZSF7b1xZuzkY&_nc_ohc=x5I5sQpC9IUQ7kNvgGQcesX&_nc_zt=23&_nc_ht=scontent.fcrk1-1.fna&oh=03_Q7cD1QFy8Y21o5Xr_fARDYsbFsRMPc71EjEnsmUnm9OYmMtkHA&oe=677E0A29" alt="Portfolio item 3">
+                <p>Project Guessing Game</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</body>
+</html>
